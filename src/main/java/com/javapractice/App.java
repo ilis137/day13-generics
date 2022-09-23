@@ -15,16 +15,30 @@ public class App
 
        }
     }
+
+    public static void checkMaxAt2ndPos(String max,String calcMax){
+        if(max.equals(calcMax)){
+         log.info("calculated maximum is "+calcMax+" and calculated maximum is  at 2nd position");
+        }else{
+         log.info("calculated maximum is "+calcMax+" and calculated maximum is not at 2nd position");
+        }
+     }
     public static void main( String[] args )
     {
         log.info( "Welcome to Generics program!" );
-        MaxNumber obj=new MaxNumber();
+        Maximum obj=new Maximum();
         int max = obj.calculateMaxNumber(25,76,35);
         checkMaxAt2ndPos(76,max);
 
         max = obj.calculateMaxNumber(85,76,35);
         checkMaxAt2ndPos(76,max);
 
+        String largest = obj.calculateLargestString("Apple", "Peach", "Banana");
+        checkMaxAt2ndPos("Peach",largest);
+        
+         largest = obj.calculateLargestString("Apple", "Banana","Peach");
+        checkMaxAt2ndPos("Banana",largest);
+        
     }
 }
 
